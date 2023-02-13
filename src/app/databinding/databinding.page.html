@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Databinding</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-input type="number" min="1" max="100" [(ngModel)]="hijos" placeholder="Introduce número de hijos"></ion-input>
+    <p>El número de hijos es {{ hijos }}</p>
+  </div>
+
+  <ion-card *ngIf="mayorMenor==''">
+    <ion-card-header>
+      !!!Enohorabuenaaaa!!! 
+    </ion-card-header>
+    <ion-card-content>
+      Puedes participar en el sorteo
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="mayorMenor!=''">
+    <ion-card-header>
+      Lo siento
+    </ion-card-header>
+    <ion-card-content>
+      No puedes participar en el sorteo
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-button *ngIf="mayorMenor!=''" expand="block" (click)="comprobarHijos()">Comprobar</ion-button>
+
+</ion-content>
